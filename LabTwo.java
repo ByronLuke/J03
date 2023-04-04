@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class LabTwo{
-/* 
+ 
 //Write a method to prompt the user to enter the radius 
 //of the circle then calculate the area and circumference of the circle.
 public static void main(String[] args) {
@@ -21,7 +21,7 @@ public static void main(String[] args) {
     System.out.println("Diameter: " + diameter);
     System.out.println("Area is: " + area);
 }
-*/
+
 // Question 2
 /* 
 //Write a method to prompt the user for base-width 
