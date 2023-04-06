@@ -96,4 +96,5 @@ public static boolean isPerfect(int numP) {
 }
     return value;
 }
+//Assistance with iFactor integration
 }
