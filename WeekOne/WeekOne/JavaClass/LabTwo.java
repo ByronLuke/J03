@@ -1,7 +1,7 @@
 package WeekOne.JavaClass;
 
-import java.lang.reflect.Method;
-import java.util.Scanner;
+//import java.lang.reflect.Method;
+//import java.util.Scanner;
 
 public class LabTwo{
 /*

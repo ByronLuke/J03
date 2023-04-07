@@ -1,7 +1,5 @@
 package WeekOne.JavaClass;
 
-import java.util.Scanner;
-
 public class LabOne {
     public static void main(String[] args) {
     maxThree(22.3, 33, 87);
@@ -61,15 +59,12 @@ public static boolean isFactor(int k, int n) {
 //is a perfect number Your method MUST call the "isFactor" method you wrote for problem #5.**
 public static boolean isPerfect(int numP) {
    Boolean perfect = true;
-   double rem=0;
-   double sum=0;
-   double i=0;
+   int sum=0;
     if (numP < 0){
     perfect = false;
    }
-   for (i=1; i<numP; i++) {
-       rem=numP%i;
-       if(rem==0){
+   for (int i=1; i<numP; i++) {
+       if(isFactor(i, numP)){
         sum = sum+i;
        }
        if (sum==numP){
@@ -84,10 +79,10 @@ public static boolean isPerfect(int numP) {
 //Write a method "isPrime" which takes an integer and returns true if it is a prime number. 
 //Your method MUST call the "isFactor" method you wrote for problem #5.
  public static boolean isPrime(int primeNum) {
-    double i=0;
+    int i=0;
     boolean value=true;
     for (i=2; i<primeNum; i++){
-        if (primeNum%i==0){
+        if (isFactor(i, primeNum)){
             value=false;
         }
         else{
