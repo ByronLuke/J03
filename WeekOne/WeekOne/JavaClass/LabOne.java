@@ -7,7 +7,7 @@ public class LabOne {
     System.out.println(middle3(11, 22, 33));
     System.out.println(xor(true, true));
     System.out.println(isFactor(2, 78));
-    System.out.println(isPerfect(8128));
+    System.out.println(isPerfect(6));
     System.out.println(isPrime(8));
     }
     //Write a method called "max3" that finds the largest of THREE integers
@@ -80,7 +80,7 @@ public static boolean isFactor(int k, int n) {
 
 }
 //Write a method "isPerfect" which takes an integer and returns true if that integer 
-//is a perfect number Your method MUST call the "isFactor" method you wrote for problem #5.**
+//is a perfect number Your method MUST call the "isFactor" method you wrote for problem #5.
 public static boolean isPerfect(int numP) {
    Boolean perfect = true;
    int sum=0;
