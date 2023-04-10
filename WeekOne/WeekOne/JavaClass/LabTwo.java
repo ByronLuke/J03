@@ -1,5 +1,7 @@
 package WeekOne.JavaClass;
 
+import java.util.Scanner;
+
 //import java.lang.reflect.Method;
 //import java.util.Scanner;
 
@@ -23,7 +25,7 @@ public static void main(String[] args) {
 }
 */
 // Question 2
-/* 
+
 //Write a method to prompt the user for base-width 
 //and height of a triangle, then calculate the area of the Triangle.
 public static void main(String[] args) {
@@ -38,8 +40,8 @@ public static void main(String[] args) {
 
     double area = (base * height) / 2;
     //Print the area
-    System.out.println("The area is: " + area);
-*/
+    System.out.print("The area is: " + area);
+
 // Question 3
 /* 
 //Write a method to prompt the user for a 
@@ -117,9 +119,9 @@ public static void main(String[] args) {
     else {
     System.out.println("Not a leap year");
 }
-} Assistance
+}
 */
 }
-
+}
 
 
