@@ -6,9 +6,31 @@ package WeekOne.JavaClass;
 public class LabThree {
 
     public static void main(String[] args) {
-        System.out.println(vowelNum());
+        /*System.out.println(vowelNum());
         System.out.println(noDupes());
-        System.out.println(Average());
+        System.out.println(Average());*/
+        vowelNum();
+
+         //Write a method to display first non repeated character of a string then the repeating characters. E.g. input morning should display morignn
+        //Variables
+    //     String word = "morning";
+    //     String newWord= "";
+    //     String dupes ="";
+    //     //char array the word
+    //     char[] wordAsChar = word.toCharArray();
+    //     char[] newWordAsChar = newWord.toCharArray();
+    //     // for loop that runs through each character of word and compares each character to another loop
+    //     for (int i = 0; i < wordAsChar.length; i++) {
+    //         for (int j = 0; j < wordAsChar.length; j++) {
+    //             if (!newWord.contains(wordAsChar[i] + "")){
+    //                 newWord += wordAsChar[i];  
+    //         }  
+    //         if (wordAsChar[i] == newWordAsChar[j]){
+    //              dupes += wordAsChar[i];
+    //     }
+    //     System.out.println(newWord);
+    // }   
+    //     }
     }
 
     public static String Average() {
@@ -53,31 +75,29 @@ public class LabThree {
 
     }
 
-    public static int vowelNum() {
+    public static void vowelNum() {
         // 3. Write a method to count the number of vowels and consonants in a string.
         // E.g. if the input is Java the result should be 2 vowels and 2 consonants .
         // First, what are the variables
-        String input = "Harry"; 
-        char[] inputAsChar = input.toCharArray();
+        String input = "MissiSSIpi"; 
         int vowelNumber = 0;
-        int consonantNumber = 0;
+        int consonant =0;
         char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
         char[] vowelsUpperCase = { 'A', 'E', 'I', 'O', 'U' };
-        for (int i = 0; i < inputAsChar.length; i++) {
-
-            if (input.contains(vowels[i] + "")) {
+        for (int i = 0; i < input.length(); i++) {
+            for (int j = 0; j < vowelsUpperCase.length; j++) {
+            if(input.charAt(i) == vowels[j]|| input.charAt(i) == vowelsUpperCase[j]){
                 vowelNumber++;
             }
-            if (input.contains(vowelsUpperCase[i] + "")) {
-                vowelNumber= vowelNumber + vowelsUpperCase[i];
-            }
+}
             
         }
-        int consonants = input.length()-vowelNumber;
-        System.out.println(consonants);
-        return consonants;
+        consonant = input.length() - vowelNumber;
+
+        System.out.println("A: "+vowelNumber+" B:"+ consonant);
 
         }
-        //Write a method to display first non repeated character of a string then the repeating characters. E.g. input morning should display morignn
+       
+
     }
 
