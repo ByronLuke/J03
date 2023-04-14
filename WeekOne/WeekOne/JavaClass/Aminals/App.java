@@ -1,4 +1,4 @@
-package WeekOne.JavaClass;
+package WeekOne.JavaClass.Aminals;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package WeekOne.JavaClass;
+package WeekOne.JavaClass.Labs;
 
 public class LabFive {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class LabFive {
         // should be displayed “you are How”
 
         System.out.println(whiteSpaces("How are you?"));
-       
+
     }
 
     public static int occurrences(String word, char letter) {
@@ -24,38 +24,38 @@ public class LabFive {
         return count;
     }
 
-    public static String whiteSpaces(String input){
-       String newInput = "";
-       char[] inputAsChar = input.toCharArray();
-       for (int i = 0; i < inputAsChar.length; i++) {
-            if(input.charAt(i)!= ' '){
-                newInput+=inputAsChar[i]; 
+    public static String whiteSpaces(String input) {
+        String newInput = "";
+        char[] inputAsChar = input.toCharArray();
+        for (int i = 0; i < inputAsChar.length; i++) {
+            if (input.charAt(i) != ' ') {
+                newInput += inputAsChar[i];
             }
-       }
-    return newInput;
+        }
+        return newInput;
 
     }
-    public static void duplicateChars(){
+
+    public static void duplicateChars() {
         String string = "Hello";
         String newString = string;
         char[] stringAsChar = string.toCharArray();
-        for (int i = 0; i < stringAsChar.length-1; i++) {
-            for (int j = i+1; j < stringAsChar.length; j++) {
-                if(string.charAt(i)== string.charAt(j)){
-                     newString = newString.replaceAll(Character.toString(string.charAt(i)), "");
+        for (int i = 0; i < stringAsChar.length - 1; i++) {
+            for (int j = i + 1; j < stringAsChar.length; j++) {
+                if (string.charAt(i) == string.charAt(j)) {
+                    newString = newString.replaceAll(Character.toString(string.charAt(i)), "");
                 }
             }
-            
-            }
-            System.out.println(newString);
-        }
-    public static void reverseOrder(){
-        String phrase = "Hello how are you";
-        String[] phraseSplit= phrase.split(" ");
-        for (int i = phraseSplit.length-1; i>=0 ; i--) {
-            System.out.print(phraseSplit[i] + " ");
-            }
-        }
-        }
-        
 
+        }
+        System.out.println(newString);
+    }
+
+    public static void reverseOrder() {
+        String phrase = "Hello how are you";
+        String[] phraseSplit = phrase.split(" ");
+        for (int i = phraseSplit.length - 1; i >= 0; i--) {
+            System.out.print(phraseSplit[i] + " ");
+        }
+    }
+}
