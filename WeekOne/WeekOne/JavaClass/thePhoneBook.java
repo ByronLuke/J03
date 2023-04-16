@@ -11,58 +11,36 @@ public class thePhoneBook {
     public void displayWelcomeMessage() {
         System.out.println("*-------------------------*");
         System.out.println("Welcome to your phone book!");
-        System.out.println("*-------------------------*");
+        System.out.println("*-------------------------*" + "\n");
 
     }
 
-    /*
-     * public void displayMenuGetChoice() {
-     * 
-     * do {
-     * System.out.println("1. Add a contact");
-     * System.out.println("2. Remove a contact");
-     * System.out.println("3. List all contacts");
-     * System.out.println("4: To exit.");
-     * Scanner scanner2 = new Scanner(System.in);
-     * int input = scanner2.nextInt();
-     * 
-     * switch (input) {
-     * 
-     * case 1:
-     * addContact();
-     * break;
-     * case 2:
-     * removeContact(contactList);
-     * break;
-     * case 3:
-     * getcontactList();
-     * break;
-     * case 4:
-     * running = false;
-     * break;
-     * default:
-     * System.out.println("Please choose 1-4");
-     * }
-     * 
-     * } while (running);
-     * 
-     * }
-     */
+    public void goodbyeMessage() {
+        System.out.println("*------------------*");
+        System.out.println("Thanks for coming!!");
+        System.out.println("*------------------*");
+
+    }
+
     public void addContact() {
         Scanner scanner = new Scanner(System.in);
         contact newContact = new contact();
 
         System.out.print("First name: ");
-        String firstName = scanner.next();
+        String firstName = scanner.nextLine();
         newContact.setName(firstName);
 
         System.out.print("Second name: ");
-        String middleName = scanner.next();
+        String middleName = scanner.nextLine();
         newContact.setMiddleName(middleName);
 
         System.out.print("Last name: ");
-        String lastName = scanner.next();
+        String lastName = scanner.nextLine();
         newContact.setLastName(lastName);
+
+        System.out.print("Phone number: ");
+        long phoneNumber = scanner.nextLong();
+        newContact.setPhoneNumber(phoneNumber);
 
         adress newAdress = new adress();
 
@@ -92,23 +70,66 @@ public class thePhoneBook {
 
     public void getcontactList() {
         for (int i = 0; i < contactList.size(); i++) {
-            System.out.println(contactList.get(i).getLastName());
+            System.out.println("\n" + contactList.get(i).getName() + " " + contactList.get(i).getMiddleName()
+                    + " " + contactList.get(i).getLastName() + " (" + contactList.get(i).getPhoneNumber() + ")");
+            System.out.println(contactList.get(i).getAdress().getStreetNumber() + " "
+                    + contactList.get(i).getAdress().getStreetName() + " "
+                    + contactList.get(i).getAdress().getCityName()
+                    + " " + contactList.get(i).getAdress().getStateName() + " "
+                    + contactList.get(i).getAdress().getPostalCode());
         }
 
     }
 
     public void removeContact(thePhoneBook phoneBook) {
-        System.out.print("What is the first name of the contact you would like to remove:");
+        System.out.print("What is the name of the contact you would like to remove:");
         Scanner scanner = new Scanner(System.in);
-        String removeByFirstName = scanner.next();
+        String removeByName = scanner.next();
         for (contact person : phoneBook.contactList) {
-            if (removeByFirstName.equals(person.getName())) {
-                System.out.println(person.getName());
+            if (removeByName.equals(person.getName())) {
                 phoneBook.contactList.remove(person);
-                break;
+            } else if (removeByName.equals(person.getLastName())) {
+                phoneBook.contactList.remove(person);
             }
-
+            break;
         }
+
+    }
+
+    public void searchContact(thePhoneBook phoneBook) {
+
+        System.out.print("Type one of the following to search: " + "\n" + "- Full name" + "\n"
+                + "- First, middle or last name" + "\n" + "- Phone number" + "\n" + "- Information from adress" + "\n"
+                + "Enter here: ");
+        Scanner scanner = new Scanner(System.in);
+        String searchByString = scanner.next();
+        adress Adress = new adress();
+        for (contact person : phoneBook.contactList) {
+            if (searchByString.equalsIgnoreCase(person.getName())
+                    || searchByString.equalsIgnoreCase(person.getMiddleName())
+                    || searchByString.equalsIgnoreCase(person.getLastName())) {
+                printContact();
+            } else if ((searchByString.equals(person.getAdress().getStreetName()))
+                    || (searchByString.equals(person.getAdress().getCityName()))
+                    || (searchByString.equals(person.getAdress().getStateName()))) {
+                printContact();
+                ;
+            } else if ((searchByString.equalsIgnoreCase(
+                    person.getName() + " " + searchByString.equalsIgnoreCase(person.getLastName())))) {
+                printContact();
+                ;
+            } else {
+                System.out.println("Contact doesn't exist :( )");
+            }
+        }
+    }
+
+    public void printContact() {
+        for (contact person : contactList)
+            System.out.println("\n" + person.getName() + " " + person.getMiddleName() + " " + person.getLastName()
+                    + "\n" + person.getPhoneNumber() + "\n" + person.adress.getStreetNumber()
+                    + person.adress.getStreetName() + person.adress.getCityName() + person.adress.getStateName()
+                    + person.adress.getPostalCode());
     }
 
 }

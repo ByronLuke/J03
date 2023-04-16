@@ -1,19 +1,31 @@
 package WeekOne.JavaClass;
 
+import java.util.ArrayList;
+
 class contact {
     private String name;
     private String middleName;
     private String lastName;
-    adress adress = new adress();
-
-    public contact() {
-    }
+    private long phoneNumber;
 
     public contact(String name, String middleName, String lastName, WeekOne.JavaClass.adress adress) {
         this.name = name;
         this.middleName = middleName;
         this.lastName = lastName;
         this.adress = adress;
+    }
+
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    adress adress = new adress();
+
+    public contact() {
     }
 
     public adress getAdress() {
@@ -28,8 +40,8 @@ class contact {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String firstName) {
+        this.name = firstName;
     }
 
     public String getMiddleName() {
